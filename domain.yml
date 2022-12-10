@@ -22,6 +22,7 @@ entities:
 - color
 - number
 - negation
+- text
 slots:
   color:
     type: text
@@ -81,6 +82,22 @@ slots:
       conditions:
       - active_loop: survey_form
         requested_slot: open_feedback
+  login:
+    type: text
+    influence_conversation: false
+    mappings:
+    - entity: text
+      type: from_entity
+      conditions:
+      - active_loop: login_form
+  password:
+    type: text
+    influence_conversation: false
+    mappings:
+    - entity: text
+      type: from_entity
+      conditions:
+      - active_loop: login_form
   requested_slot:
     type: any
     influence_conversation: false
@@ -195,6 +212,16 @@ responses:
   - text: Sorry, seems like we don't have those shoes.
   utter_order_shoes:
   - text: Sorry, I can't actually help you order the shoes. Please visit our site to buy some nice shoes! I can help you check inventory, see the status of an order or even make a change to that order.
+  utter_ask_login_form_login:
+  - text: Please, write your login.
+  utter_ask_login_form_password:
+  - text: Please, write your password?
+  utter_login_finish:
+  - text: You are successfully login!
+  utter_login_error:
+  - text: Sorry, an error occurred during login
+  utter_form_login:
+  - text: You login
 actions:
 - action_product_search
 - action_survey_submit
@@ -202,6 +229,7 @@ actions:
 - action_cancel_order
 - action_return
 - action_give_name
+- action_login
 forms:
   order_status_form:
     ignored_intents: []
@@ -229,3 +257,8 @@ forms:
     required_slots:
     - rating
     - open_feedback
+  login_form:
+    ignored_intents: []
+    required_slots:
+    - login
+    - password
