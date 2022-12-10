@@ -219,3 +219,7 @@ nlu:
   examples: |
     - can you tell me your name?
     - what's your name?
+- intent: login
+  examples: |
+    - login
+    - login into account
