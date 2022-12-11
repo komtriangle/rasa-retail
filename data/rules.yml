@@ -15,6 +15,12 @@ rules:
   - action: action_logout
   - active_loop: null
 
+- rule: current_role
+  steps:
+  - intent: current_role
+  - action: action_current_role
+  - active_loop: null
+
 - rule: out of scope
   steps:
   - or:

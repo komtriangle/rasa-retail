@@ -207,6 +207,7 @@ class Login(Action):
         domain: Dict[Text, Any],
     ) -> List[Dict[Text, Any]]:
         print("login action")
+        slots_to_reset = ["userName", "password"]
         try:
                 connection = sqlite3.connect(path_to_db)
                 cursor = connection.cursor()
@@ -220,7 +221,7 @@ class Login(Action):
 
                 if not data_row:
                     dispatcher.utter_message(template="utter_login_not_found")
-                    return
+                    return [SlotSet(slot, None) for slot in slots_to_reset]
 
                 user_id =  list(data_row)[0]
                 print(user_id)
@@ -229,12 +230,14 @@ class Login(Action):
                 connection.commit()
                 connection.close()
                 dispatcher.utter_message(template="utter_login_finish")
+                return [SlotSet(slot, None) for slot in slots_to_reset]
 
         except Exception as e:
                 print(str(e))
                 dispatcher.utter_message(template="utter_login_error")
+                return [SlotSet(slot, None) for slot in slots_to_reset]
 
-                
+
 class Logout(Action):
     def name(self) ->  Text:
             return "action_logout"
@@ -287,7 +290,7 @@ class Account_status(Action):
 
                 if not data_row:
                     dispatcher.utter_message(template="utter_logout_not_in_account")
-                    return
+                    return [SlotSet("Location", None)]
 
                 connection.close()
                 dispatcher.utter_message(template="utter_account_status_finish")
