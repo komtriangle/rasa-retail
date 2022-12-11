@@ -220,6 +220,8 @@ responses:
   - text: Please, write your password.
   utter_login_finish:
   - text: You are successfully login!
+  utter_login_not_found:
+  - text: user with this userName and password not found
   utter_login_error:
   - text: Sorry, an error occurred during login
   utter_form_login:

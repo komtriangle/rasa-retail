@@ -207,7 +207,25 @@ class Login(Action):
         domain: Dict[Text, Any],
     ) -> List[Dict[Text, Any]]:
         
-        userName =  tracker.get_slot("userName")
-        password =  tracker.get_slot("password")
-        print(userName)
-        print(password)
+        try:
+                connection = sqlite3.connect(path_to_db)
+                cursor = connection.cursor()
+                userName =  tracker.get_slot("userName")
+                password =  tracker.get_slot("password")
+
+                cursor.execute("SELECT * FROM user where login=? and password=?", (userName, password))
+                data_row = cursor.fetchone()
+
+                if not data_row:
+                    dispatcher.utter_message(template="utter_login_not_found")
+
+                user_id =  list(data_row)[0]
+                print(user_id)
+                cursor.execute("DELETE * from currentUser")
+                cursor.execute("INSERT into currentUser values (?)", (user_id))
+                connection.commit()
+                connection.close()
+                dispatcher.utter_message(template="utter_login_finish")
+
+        except Exception as e:
+                dispatcher.utter_message(template="utter_login_error")
