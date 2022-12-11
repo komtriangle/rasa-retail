@@ -57,19 +57,19 @@ c.executemany('INSERT INTO roles VALUES (?,?)', roles)
 
 
 c.execute('''CREATE TABLE users 
-    (id, login, password, role
-    FOREIGN KEY(role) REFERENCES roles(1))''')
+    (id, login, password, role,
+    FOREIGN KEY(role) REFERENCES roles(id))''')
 
 
-users = ([1,'loginAdmin', 'passwordAdmin'],
-        [2,'loginSeller', 'passwordSeller'],
-        [3,'loginCustomer', 'passwordCustomer'])
+users = ([1,'loginAdmin', 'passwordAdmin', 1],
+        [2,'loginSeller', 'passwordSeller', 2],
+        [3,'loginCustomer', 'passwordCustomer', 3])
 
-c.executemany('INSERT INTO users VALUES (?,?, ?)', users)
+c.executemany('INSERT INTO users VALUES (?,?, ?, ?)', users)
 
 
-c.execute('''CREATE TABLE currentUser (
-    (user
+c.execute('''CREATE TABLE currentUser
+    (user,
     FOREIGN KEY(user) REFERENCES users(id))''')
 
 
