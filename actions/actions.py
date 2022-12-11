@@ -226,7 +226,7 @@ class Login(Action):
                 user_id =  list(data_row)[0]
                 print(user_id)
                 cursor.execute("DELETE from currentUser")
-                cursor.execute("INSERT into currentUser values (?)", (str(user_id)))
+                cursor.execute("INSERT into currentUser values (?)", (int(user_id),))
                 connection.commit()
                 connection.close()
                 dispatcher.utter_message(template="utter_login_finish")
@@ -290,6 +290,7 @@ class Account_status(Action):
 
                 if not data_row:
                     dispatcher.utter_message(template="utter_logout_not_in_account")
+                    return
 
                 connection.close()
                 dispatcher.utter_message(template="utter_account_status_finish", name=list(data_row)[6])
