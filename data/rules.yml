@@ -196,7 +196,7 @@ rules:
   - intent: login
   - action: action_login
   - active_loop: null
-  - action: utter_product_stock_start
+  - action: utter_login_start
   - action: login_form
   - active_loop: login_form
 
