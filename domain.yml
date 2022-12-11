@@ -23,7 +23,8 @@ entities:
 - color
 - number
 - negation
-- string
+- userName
+- password
 slots:
   color:
     type: text
@@ -87,7 +88,7 @@ slots:
     type: text
     influence_conversation: false
     mappings:
-    - entity: string
+    - entity: userName
       type: from_entity
       conditions:
       - active_loop: login_form
@@ -95,7 +96,7 @@ slots:
     type: text
     influence_conversation: false
     mappings:
-    - entity: string
+    - entity: password
       type: from_entity
       conditions:
       - active_loop: login_form
