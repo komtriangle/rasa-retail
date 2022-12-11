@@ -207,4 +207,7 @@ class Login(Action):
         domain: Dict[Text, Any],
     ) -> List[Dict[Text, Any]]:
         
-        print(1)
+        userName =  tracker.get_slot("userName")
+        password =  tracker.get_slot("password")
+        print(userName)
+        print(password)

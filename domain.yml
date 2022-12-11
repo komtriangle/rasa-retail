@@ -23,7 +23,7 @@ entities:
 - color
 - number
 - negation
-- text
+- string
 slots:
   color:
     type: text
@@ -87,7 +87,7 @@ slots:
     type: text
     influence_conversation: false
     mappings:
-    - entity: text
+    - entity: string
       type: from_entity
       conditions:
       - active_loop: login_form
@@ -95,7 +95,7 @@ slots:
     type: text
     influence_conversation: false
     mappings:
-    - entity: text
+    - entity: string
       type: from_entity
       conditions:
       - active_loop: login_form
@@ -125,6 +125,8 @@ responses:
       title: Check inventory
     - payload: Subscribe to product updates
       title: Subscribe to product updates
+    - payload: Login into account
+      title: Login into account
     text: Hi there! I'm a demo bot from Rasa to help you with ordering shoes. How can I help you?
   utter_default:
   - text: I don't think I understand. Can you try providing more detail?
@@ -261,5 +263,5 @@ forms:
   login_form:
     ignored_intents: []
     required_slots:
-    - login
+    - userName
     - password
