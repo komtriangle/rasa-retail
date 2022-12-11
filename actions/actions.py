@@ -220,10 +220,11 @@ class Login(Action):
 
                 if not data_row:
                     dispatcher.utter_message(template="utter_login_not_found")
+                    return
 
                 user_id =  list(data_row)[0]
                 print(user_id)
-                cursor.execute("DELETE * from currentUser")
+                cursor.execute("DELETE from currentUser")
                 cursor.execute("INSERT into currentUser values (?)", (user_id))
                 connection.commit()
                 connection.close()
