@@ -230,4 +230,5 @@ class Login(Action):
                 dispatcher.utter_message(template="utter_login_finish")
 
         except Exception as e:
+                print(str(e))
                 dispatcher.utter_message(template="utter_login_error")
