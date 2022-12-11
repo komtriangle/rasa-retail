@@ -7,7 +7,7 @@ from rasa_sdk.events import BotUttered
 import sqlite3
 
 # change this to the location of your SQLite file
-path_to_db = "actions/example.db"
+path_to_db = "example.db"
 
 class ActionProductSearch(Action):
     def name(self) -> Text:
