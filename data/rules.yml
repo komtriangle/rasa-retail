@@ -206,15 +206,6 @@ rules:
   - action: login_form
   - active_loop: login_form
 
-- rule: Activate form for login
-  steps:
-  - intent: login
-  - action: action_login
-  - active_loop: null
-  - action: utter_login_start
-  - action: login_form
-  - active_loop: login_form
-
 - rule: Submit login form, survey complete
   condition:
   - active_loop: login_form

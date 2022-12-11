@@ -230,9 +230,10 @@ nlu:
     - logout
     - I want to logout
     - I want to exit from account
-- intent: account_status
+- intent: current_role
   examples: |
     - account status
+    - account role
     - I want to see my account status
     - my account
     - my role
