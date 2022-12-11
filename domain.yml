@@ -233,7 +233,6 @@ responses:
   - text: You can't log out because you are not in account
   utter_logout_finish:
   - text: You are successfully logout
-  - text: 
 actions:
 - action_product_search
 - action_survey_submit
