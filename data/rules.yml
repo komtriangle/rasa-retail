@@ -9,6 +9,11 @@ rules:
   - intent: chitchat
   - action: utter_chitchat
 
+- rule: logout
+  steps:
+  - intent: logout
+  - action: action_deactivate_loop
+  - active_loop: null
 
 - rule: out of scope
   steps:
