@@ -89,6 +89,7 @@ slots:
     - type: from_text
       conditions:
       - active_loop: login_form
+        requested_slot: userName
   password:
     type: text
     influence_conversation: false
@@ -96,6 +97,7 @@ slots:
     - type: from_text
       conditions:
       - active_loop: login_form
+        requested_slot: password
   requested_slot:
     type: any
     influence_conversation: false
