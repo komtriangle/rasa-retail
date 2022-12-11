@@ -206,12 +206,14 @@ class Login(Action):
         tracker: Tracker,
         domain: Dict[Text, Any],
     ) -> List[Dict[Text, Any]]:
-        
+        print("login action")
         try:
                 connection = sqlite3.connect(path_to_db)
                 cursor = connection.cursor()
                 userName =  tracker.get_slot("userName")
                 password =  tracker.get_slot("password")
+                print(f"userName: {userName}")
+                print(f"password: {password}")
 
                 cursor.execute("SELECT * FROM user where login=? and password=?", (userName, password))
                 data_row = cursor.fetchone()
