@@ -17,8 +17,7 @@ intents:
 - out_of_scope
 - nlu_fallback
 - whats_your_name
-- userName
-- password
+- login
 entities:
 - email
 - color
@@ -84,7 +83,7 @@ slots:
       conditions:
       - active_loop: survey_form
         requested_slot: open_feedback
-  login:
+  userName:
     type: text
     influence_conversation: false
     mappings:
