@@ -224,7 +224,7 @@ responses:
   utter_login_not_found:
   - text: user with this userName and password not found
   utter_login_error:
-  - text: Sorry, an error occurred during login
+  - text: Sorry, an error occurred during logout
   utter_form_login:
   - text: You login
   utter_login_start:
