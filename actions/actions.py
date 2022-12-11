@@ -225,7 +225,7 @@ class Login(Action):
                 user_id =  list(data_row)[0]
                 print(user_id)
                 cursor.execute("DELETE from currentUser")
-                cursor.execute("INSERT into currentUser values (?)", (int(user_id)))
+                cursor.execute("INSERT into currentUser values (?)", (str(user_id)))
                 connection.commit()
                 connection.close()
                 dispatcher.utter_message(template="utter_login_finish")
