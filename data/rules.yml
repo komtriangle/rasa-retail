@@ -9,6 +9,11 @@ rules:
   - intent: chitchat
   - action: utter_chitchat
 
+- rule: logout
+  steps:
+  - intent: logout
+  - action: logout
+
 - rule: out of scope
   steps:
   - or:
@@ -228,5 +233,8 @@ rules:
   - action: action_login
   - action: survey_form
   - active_loop: survey_form
+
+
+
 
 

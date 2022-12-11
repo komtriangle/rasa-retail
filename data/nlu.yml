@@ -225,3 +225,8 @@ nlu:
   examples: |
     - login
     - login into account
+- intent:  logout 
+  examples: |
+    - logout
+    - I want to logout
+    - I want to exit from account

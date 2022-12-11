@@ -233,3 +233,33 @@ class Login(Action):
         except Exception as e:
                 print(str(e))
                 dispatcher.utter_message(template="utter_login_error")
+class Logout(Action):
+    def name(self) ->  Text:
+            return "action_logout"
+
+    def run(
+        self,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict[Text, Any],
+    ) -> List[Dict[Text, Any]]:
+        print("logout action")
+        try:
+                connection = sqlite3.connect(path_to_db)
+                cursor = connection.cursor()
+
+                cursor.execute("SELECT * FROM currentUser")
+                data_row = cursor.fetchone()
+
+                if not data_row:
+                    dispatcher.utter_message(template="utter_logout_not_in_account")
+                    return
+
+                cursor.execute("DELETE from currentUser")
+                connection.commit()
+                connection.close()
+                dispatcher.utter_message(template="utter_logout_finish")
+
+        except Exception as e:
+                print(str(e))
+                dispatcher.utter_message(template="utter_login_error")
