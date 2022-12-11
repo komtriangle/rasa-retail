@@ -215,7 +215,7 @@ class Login(Action):
                 print(f"userName: {userName}")
                 print(f"password: {password}")
 
-                cursor.execute("SELECT * FROM user where login=? and password=?", (userName, password))
+                cursor.execute("SELECT * FROM users where login=? and password=?", (userName, password))
                 data_row = cursor.fetchone()
 
                 if not data_row:
