@@ -1,5 +1,11 @@
 version: "2.0"
 nlu:
+- regex: userName
+  examples: |
+    - login_\d{5}
+- regex: password
+  examples: |
+    - password_\d{5}
 - intent: order_status
   examples: |
     - check status of my order
@@ -68,6 +74,8 @@ nlu:
     - asdf@asdf.com
     - [Grey](color)
     - test@test.com
+    - my login is  login_\d{5}(userName)
+    - my password is  password_\d{5}(password)
 - intent: order_shoes
   examples: |
     - i want to buy shoes

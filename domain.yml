@@ -219,7 +219,7 @@ responses:
   utter_ask_login_form_userName:
   - text: Please, write your login.
   utter_ask_login_form_password:
-  - text: Please, write your password?
+  - text: Please, write your password.
   utter_login_finish:
   - text: You are successfully login!
   utter_login_error:
