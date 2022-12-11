@@ -284,16 +284,15 @@ class Account_status(Action):
                 connection = sqlite3.connect(path_to_db)
                 cursor = connection.cursor()
 
-                cursor.execute("SELECT * FROM currentUser join users on users.id = currentUser.id join roles on roles.id = users.role")
+                cursor.execute("SELECT * FROM currentUser join users on users.id = currentUser.user join roles on roles.id = users.role")
                 data_row = cursor.fetchone()
                 print(data_row)
 
                 if not data_row:
                     dispatcher.utter_message(template="utter_logout_not_in_account")
-                    return [SlotSet("Location", None)]
 
                 connection.close()
-                dispatcher.utter_message(template="utter_account_status_finish")
+                dispatcher.utter_message(template="utter_account_status_finish", name=list(data_row)[6])
 
         except Exception as e:
                 print(str(e))
