@@ -229,7 +229,7 @@ responses:
   utter_account_status_error:
   - text: Sorry, an error occurred during checking account status
   utter_account_status_finish:
-  - text: You role is ...
+  - text: You role is {status}
   utter_form_login:
   - text: You login
   utter_login_start:
