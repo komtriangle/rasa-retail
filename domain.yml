@@ -19,6 +19,7 @@ intents:
 - whats_your_name
 - login
 - logout
+- account_status
 entities:
 - email
 - color
@@ -225,6 +226,10 @@ responses:
   - text: user with this userName and password not found
   utter_login_error:
   - text: Sorry, an error occurred during logout
+  utter_account_status_error:
+  - text: Sorry, an error occurred during checking account status
+  utter_account_status_finish:
+  - text: You role is ...
   utter_form_login:
   - text: You login
   utter_login_start:

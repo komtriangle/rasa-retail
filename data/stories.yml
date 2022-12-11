@@ -39,6 +39,20 @@ stories:
   - action: action_deactivate_loop
   - active_loop: null
 
+  - story: User stops logout
+    steps:
+  - action: utter_greet
+  - action: action_deactivate_loop
+  - active_loop: null
+
+
+- story: User stops account_status
+  steps:
+  - action: utter_greet
+  - action: action_deactivate_loop
+  - active_loop: null
+
+
 
 - story: User stops cancel_form
   steps:
