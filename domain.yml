@@ -226,6 +226,8 @@ responses:
   - text: Sorry, an error occurred during login
   utter_form_login:
   - text: You login
+  utter_login_start:
+  - text: Write your login and password to have access to actions
 actions:
 - action_product_search
 - action_survey_submit
