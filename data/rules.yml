@@ -12,7 +12,7 @@ rules:
 - rule: logout
   steps:
   - intent: logout
-  - action: action_deactivate_loop
+  - action: action_logout
   - active_loop: null
 
 - rule: out of scope

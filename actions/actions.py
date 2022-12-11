@@ -266,7 +266,7 @@ class Logout(Action):
 
 class Account_status(Action):
     def name(self) ->  Text:
-            return "action_account_status"
+            return "action_current_role"
 
     def run(
         self,

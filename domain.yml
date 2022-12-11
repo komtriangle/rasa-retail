@@ -19,7 +19,7 @@ intents:
 - whats_your_name
 - login
 - logout
-- account_status
+- current_role
 entities:
 - email
 - color
