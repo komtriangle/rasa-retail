@@ -17,7 +17,8 @@ intents:
 - out_of_scope
 - nlu_fallback
 - whats_your_name
-- login
+- userName
+- password
 entities:
 - email
 - color
