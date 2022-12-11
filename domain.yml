@@ -231,6 +231,8 @@ responses:
   - text: Write your login and password to have access to actions
   utter_logout_not_in_account:
   - text: You can't log out because you are not in account
+  utter_logout_start:
+  - text: Logging out...
   utter_logout_finish:
   - text: You are successfully logout
 actions:
